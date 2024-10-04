@@ -1,45 +1,44 @@
-# Aqui iremos nomear adequadamente nosso pipeline (fluxo de trabalho)
 name: Primeiro workflow  
-# aqui iremos listar os eventos (gatilhos) que disparam o pipeline
 on:
   push:
     branches:
-      -main  
-      -master
-      -developer
-  pull_request: [main, master, developer, hotfix]
-# quais trabalhos a serem executados pelo workflow?
+      - main  
+      - master
+      - developer
+  pull_request:
+    branches:
+      - main
+      - master
+      - developer
+      - hotfix
+
 jobs:
   trabalho1:
-   - name: Passo 1
-     runs-om: ubuntu-latest
-     # agora irei programar os passos do script
-     steps:
-       - name: Passo 1
-   - run: echo "executando o primeiro passo"
-        - name: Passo 2
-         run: echo "Executando o segundo passo"
-        - name: Passo 3 
-          run: echo "Executando o terceiro passo"
-           trabalho2:
-   - name: Fluxo 2
-     runs-om: ubuntu-latest
-     # agora irei programar os passos do script
-     steps:
-       - name: Passo 4
-   - run: echo "executando o primeiro passo"
-        - name: Passo 5
-         run: echo "Executando o segundo passo"
-        - name: Passo 6 
-          run: echo "Executando o terceiro passo"
-           trabalho3:
-   - name: Fluxo 3
-     runs-om: ubuntu-latest
-     # agora irei programar os passos do script
-     steps:
-       - name: Passo 7
-   - run: echo "executando o primeiro passo"
-        - name: Passo 8
-         run: echo "Executando o segundo passo"
-        - name: Passo 9 
-          run: echo "Executando o terceiro passo"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Passo 1
+        run: echo "executando o primeiro passo"
+      - name: Passo 2
+        run: echo "Executando o segundo passo"
+      - name: Passo 3 
+        run: echo "Executando o terceiro passo"
+
+  trabalho2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Passo 4
+        run: echo "executando o primeiro passo"
+      - name: Passo 5
+        run: echo "Executando o segundo passo"
+      - name: Passo 6 
+        run: echo "Executando o terceiro passo"
+
+  trabalho3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Passo 7
+        run: echo "executando o primeiro passo"
+      - name: Passo 8
+        run: echo "Executando o segundo passo"
+      - name: Passo 9 
+        run: echo "Executando o terceiro passo"
